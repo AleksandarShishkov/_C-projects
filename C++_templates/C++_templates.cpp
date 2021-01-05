@@ -28,8 +28,8 @@ T maximum(T num1, T num2, T num3)											// three parameters
 template <class T>													// declaring template with
 T minimum(T num1, T num2, T num3)											// three parameters
 {
-	return (num1 < num2&& num1 < num3) ? num1 :									// using ternary pperator
-		(num2 < num1&& num2 < num3) ? num2 : num3;								// to calculate the least than
+	return (num1 < num2 && num1 < num3) ? num1 :									// using ternary pperator
+		(num2 < num1 && num2 < num3) ? num2 : num3;								// to calculate the least than
 }															// the three
 	
 	
