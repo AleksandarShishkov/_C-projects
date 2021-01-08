@@ -1,14 +1,15 @@
 
 
-#include "BasicShape.h"														// 
+
+#include "BasicShape.h"										 
 
 
 
 
 
-double BasicShape::get_area()												// declaring get_are()
+double BasicShape::get_area()									// declaring get_are()
 {
-	return area;															// returning the area
+	return area;										// returning the area
 }
 
 
