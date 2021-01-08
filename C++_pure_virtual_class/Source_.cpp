@@ -21,10 +21,10 @@
 
 
 
-#include "Circle.h"																// includeing the Circle header
-#include "Rectangle.h"															// including the Rectangle header
+#include "Circle.h"										// includeing the Circle header
+#include "Rectangle.h"										// including the Rectangle header
 
-#include <iomanip>																// including the iomanip library
+#include <iomanip>										// including the iomanip library
 
 
 
@@ -33,20 +33,20 @@
 int main()
 {
 
-	Circle* circle = new Circle;												// a pointer to Circle`s instance
+	Circle* circle = new Circle;								// a pointer to Circle`s instance
 
 	try
-	{																			// entering the try block
-																				// validating the input
+	{											// entering the try block
+												// validating the input
 
 
-		circle->set_center_x();													// calling the setter for the center_x
-		circle->set_center_y();													// calling the setter for the center_y
-		circle->set_radius();													// calling the setter for the radius
-		circle->calc_area();													// calling calc_area() function
+		circle->set_center_x();								// calling the setter for the center_x
+		circle->set_center_y();								// calling the setter for the center_y
+		circle->set_radius();								// calling the setter for the radius
+		circle->calc_area();								// calling calc_area() function
 
 
-		cout << setprecision(2) << showpoint << fixed;							// formatting the output
+		cout << setprecision(2) << showpoint << fixed;					// formatting the output
 		cout << "\nThe area of the cirle is : " << circle->get_area() <<		//printing the result
 			'\n';
 
@@ -68,13 +68,13 @@ int main()
 
 
 	try
-	{																			// entering the try block
-																				// validating the input
+	{											// entering the try block
+												// validating the input
 
-		Circle* circle_p = new Circle(1, 15, 2.2);								// a pointer to Circle`s instance with parameters
-																				// for the center_x, the center_y and the radius
+		Circle* circle_p = new Circle(1, 15, 2.2);					// a pointer to Circle`s instance with parameters
+												// for the center_x, the center_y and the radius
 		
-		cout << "\nThe area of the cirle with parameters is : " <<				// printing the formatted output
+		cout << "\nThe area of the cirle with parameters is : " <<			// printing the formatted output
 			circle_p->get_area() << '\n';
 	
 	}
@@ -88,7 +88,7 @@ int main()
 	}
 	catch (Circle::Exception_radius& r)
 	{
-		cout << "\nInvalid value for the radius: " << r.get__radius() << '\n';	// printing an error message if an exception is thrown for the radius
+		cout << "\nInvalid value for the radius: " << r.get__radius() << '\n';		// printing an error message if an exception is thrown for the radius
 	}
 
 
@@ -97,15 +97,15 @@ int main()
 
 
 
-	Rectangle* rectangle = new Rectangle;										// a pointer to Rectangle`s instance
+	Rectangle* rectangle = new Rectangle;							// a pointer to Rectangle`s instance
 
 	try
-	{																			// entering the try block
-																				// validating the input
+	{											// entering the try block
+												// validating the input
 
-		rectangle->set_width();													// calling the setter for the width
-		rectangle->set_lenght();												// calling the setter for the lenght
-		rectangle->calc_area();													// calling the calc_area() function
+		rectangle->set_width();								// calling the setter for the width
+		rectangle->set_lenght();							// calling the setter for the lenght
+		rectangle->calc_area();								// calling the calc_area() function
 
 		cout << "\nThe rectangle`s area is '" << rectangle->get_area() <<		// printing the formatted output
 			"'\n";
@@ -118,18 +118,18 @@ int main()
 	}
 	catch (Rectangle::Exception_lenght& l)
 	{
-		cout << "\nInvalid value for the lenght: " << l.get_lenght() << '\n';	// printing an error message if an exception is thrown for the lenght
+		cout << "\nInvalid value for the lenght: " << l.get_lenght() << '\n';		// printing an error message if an exception is thrown for the lenght
 	}
 
 
 
 	try
-	{																			// entering the try block
-																				// validating the input
+	{											// entering the try block
+												// validating the input
 
 
-		Rectangle* rectangle_p = new Rectangle(10, 20);							// a pointer to Rectangle`s instance with parameters for
-																				// the width and the lenght
+		Rectangle* rectangle_p = new Rectangle(10, 20);					// a pointer to Rectangle`s instance with parameters for
+												// the width and the lenght
 
 		cout << "\nThe area of the recatangle with parameters is '" <<			// printing the formatted output
 			rectangle_p->get_area() << "'\n";
@@ -141,14 +141,14 @@ int main()
 	}
 	catch (Rectangle::Exception_lenght& l)
 	{
-		cout << "\nInvalid value for the lenght: " << l.get_lenght() << '\n';	// printing an error message if an exception is thrown fot the lenght
+		cout << "\nInvalid value for the lenght: " << l.get_lenght() << '\n';		// printing an error message if an exception is thrown fot the lenght
 	}
 
 
-	cout << "\nThe program has ended\n";										// a message indicating that the program has ended
+	cout << "\nThe program has ended\n";							// a message indicating that the program has ended
 
 
-	delete circle, rectangle;													// releasing the allocated memory
+	delete circle, rectangle;								// releasing the allocated memory
 
 	return 0;
 }
