@@ -5,7 +5,7 @@
 #include "Board.h"																
 
 
-Board::Board()																			// initializing the array with default values
+Board::Board()													// initializing the array with default values
 {
 	for (int i = 0; i < 3; i++)
 	{
@@ -17,7 +17,7 @@ Board::Board()																			// initializing the array with default values
 }
 
 
-void Board::print_message()																// printing the games` info
+void Board::print_message()											// printing the games` info
 {
 	cout << "\n\n\tTic-Tac-Toe\n" <<
 		"\n\tA game played by two players.\n" <<
@@ -27,14 +27,14 @@ void Board::print_message()																// printing the games` info
 		"\n\tAny characters outside the board and on already " <<
 		"\n\ttaken squares aren`t allowed\n";
 
-	cout << "\n\tPress <Enter> to continue...";											// prompting the user to press Enter to
-																						// continue
+	cout << "\n\tPress <Enter> to continue...";								// prompting the user to press Enter to
+														// continue
 	cin.get();
 }
 
 
 
-void Board::print_board()																// printing the formatted board
+void Board::print_board()											// printing the formatted board
 {
 
 	cout << '\n';
