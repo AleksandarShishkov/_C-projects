@@ -175,7 +175,7 @@ int main()
 
 
 
-void show_score(int draw_game, int v_pl1, int v_pl2, string s1, string s2)					// a function declaration for thecurrent score
+void show_score(int draw_game, int v_pl1, int v_pl2, string s1, string s2)					// a function definition for thecurrent score
 {
 	cout << "\n\n\tCurrent result: \n";									// printing the formatted score
 	cout << "\nScore '" << s1 << "': " << v_pl1 << '\n';
