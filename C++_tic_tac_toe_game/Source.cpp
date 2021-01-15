@@ -5,7 +5,7 @@
 #include "Game.h"												// including Game`s header
 
 
-void show_score(int, int, int, string, string);									// a function definition for the current score
+void show_score(int, int, int, string, string);									// a function prototype for the current score
 
 
 int main()
