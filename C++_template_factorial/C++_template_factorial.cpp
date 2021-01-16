@@ -141,12 +141,12 @@ int main()
 		case 0:
 
 			cout << "\nThe program has ended!\n\n";								// printing message indicating that the 
-			break;																				// program has ended
+			break;												// program has ended
 
 		default:
 
 			cout << "\nInvalid input. Try again\n";								// a default statement indicating that
-			break;																				// the input is incorrect
+			break;												// the input is incorrect
 		}
 
 	}
