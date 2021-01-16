@@ -32,7 +32,7 @@ using namespace std;
 
 
 template <typename T>
-T factorial(T num)																				// a template function to calculate the
+T factorial(T num)													// a template function to calculate the
 {																								// factorial treough recursion
 	if (num <= 1)
 		return 1;
@@ -46,17 +46,17 @@ T factorial(T num)																				// a template function to calculate the
 int main()
 {
 	
-	int numI;																					// an integer to hold the integer input
-	long numL;																					// a long to hold the long input
-	long long numLL;																			// a long long to hold the long long input
-	double numD;																				// a double to hold the double input
-	float numF;																					// a float to hold the float input
+	int numI;													// an integer to hold the integer input
+	long numL;													// a long to hold the long input
+	long long numLL;												// a long long to hold the long long input
+	double numD;													// a double to hold the double input
+	float numF;													// a float to hold the float input
 
-	int choice = 1;																				// an integer set to 1 to hold the choice
+	int choice = 1;													// an integer set to 1 to hold the choice
 
 	while (choice != 0)
 	{
-																								// displaying the meny
+															// displaying the meny
 		cout << "\n\tSelect between the following:\n";
 		cout << "\n'1' for integer";
 		cout << "\n'2' for long integer";
@@ -67,21 +67,21 @@ int main()
 		cout << "\n\t> ";
 		cin >> choice;
 
-		cout << setprecision(2) << fixed << showpoint;											// formatting the output for the doubles and
-																								// the floats
+		cout << setprecision(2) << fixed << showpoint;								// formatting the output for the doubles and
+															// the floats
 
 
 		
-		switch (choice)																			// switching the choice
+		switch (choice)												// switching the choice
 		{
 
 
 		case 1:
 
-			cout << "\nEnter an integer > ";													// prompting the user to enter an integer
+			cout << "\nEnter an integer > ";								// prompting the user to enter an integer
 			cin >> numI;
 
-			if (numI < 1)																		// validating the input
+			if (numI < 1)											// validating the input
 				cout << "\nInvalid integer\n";
 			else
 				cout << "\nFactorial of !" << numI << " is: " << factorial(numI) << '\n';		// calling the template function
@@ -91,9 +91,9 @@ int main()
 		case 2:
 
 			cout << "\nEnter a long integer > ";
-			cin >> numL;																		// prompting the user to enter a long
+			cin >> numL;											// prompting the user to enter a long
 
-			if (numL < 1)																		// validating the input
+			if (numL < 1)											// validating the input
 				cout << "\nInvalid long integer\n";
 			else
 				cout << "\nFactorial of !" << numL << " is: " << factorial(numL) << '\n';		// calling the template function
@@ -103,9 +103,9 @@ int main()
 		case 3:
 
 			cout << "\nEnter a long long integer > ";
-			cin >> numLL;																		// prompting the user to enter a long long
+			cin >> numLL;											// prompting the user to enter a long long
 
-			if (numLL < 1)																		// validating the input
+			if (numLL < 1)											// validating the input
 				cout << "\nInvalid long long integer\n";
 			else
 				cout << "\nFactorial of !" << numLL << " is: " << factorial(numLL) << '\n';		// calling the template function
@@ -116,9 +116,9 @@ int main()
 		case 4:
 
 			cout << "\nEnter a double > ";
-			cin >> numD;																		// prompting the user to enter a double
+			cin >> numD;											// prompting the user to enter a double
 
-			if (numD < 1.0)																		// validating the input
+			if (numD < 1.0)											// validating the input
 				cout << "\nInvalid double\n";
 			else
 				cout << "\nFactorial of !" << numD << " is: " << factorial(numD) << '\n';		// calling the template function
@@ -129,9 +129,9 @@ int main()
 		case 5:
 
 			cout << "\nEnter a float > ";
-			cin >> numF;																		// prompting the user to enter a float
+			cin >> numF;											// prompting the user to enter a float
 
-			if (numF < 1.0)																		// validating the input
+			if (numF < 1.0)											// validating the input
 				cout << "\nInvalid float\n";
 			else
 				cout << "\nFactorial of !" << numF << " is: " << factorial(numF) << '\n';		// calling the template function
@@ -140,12 +140,12 @@ int main()
 
 		case 0:
 
-			cout << "\nThe program has ended!\n\n";										// printing message indicating that the 
+			cout << "\nThe program has ended!\n\n";								// printing message indicating that the 
 			break;																				// program has ended
 
 		default:
 
-			cout << "\nInvalid input. Try again\n";												// a default statement indicating that
+			cout << "\nInvalid input. Try again\n";								// a default statement indicating that
 			break;																				// the input is incorrect
 		}
 
