@@ -242,7 +242,14 @@ int main()
 		}
 	}
 
-
+	
+	
+	delete arrInt;												// freeing the allocated memory for arrInt
+	delete arrFloat;											// freeing the allocated memory for arrFloat
+	delete arrDouble;											// freeing the allocated memory for arrDouble
+	delete arrChar;												// freeing the allocated memory for arrChar
+	delete arrString;											// freeng the allocated memory for arrString
+	
 
 	return 0;
 }
