@@ -5,9 +5,9 @@ using namespace std;
 
 
 
-template <typename E>																		// a template for the elements in the array
-E get_elements(E* arr, int size)															// with two parameters that returns a pointer
-{																							// to the array
+template <typename E>												// a template for the elements in the array
+E get_elements(E* arr, int size)										// with two parameters that returns a pointer
+{														// to the array
 	cout << "\nEnter the elements:\n";														
 
 	for (int i = 0; i < size; i++)
@@ -21,9 +21,9 @@ E get_elements(E* arr, int size)															// with two parameters that retur
 
 
 
-template <typename Sort>																	// a template for sorting the array
-Sort sort(Sort* arr, int size)																// with two parameters that returns a pointer
-{																							// to the array
+template <typename Sort>											// a template for sorting the array
+Sort sort(Sort* arr, int size)											// with two parameters that returns a pointer
+{														// to the array
 
 
 	for (int i = 0; i < size - 1; i++)
@@ -51,9 +51,9 @@ Sort sort(Sort* arr, int size)																// with two parameters that return
 
 
 
-template <typename Search>																	// a tempalte for the search
-int search(Search num, Search* arr, int size)												// with three parameters that returns the index of
-{																							// the searched element if in the array
+template <typename Search>											// a tempalte for the search
+int search(Search num, Search* arr, int size)									// with three parameters that returns the index of
+{														// the searched element if in the array
 
 
 	int first = 0;																			
