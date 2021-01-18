@@ -251,7 +251,7 @@ int main()
 
 
 void menu(int& choice)												// a definition for the menu() function, it accepts
-{																							// an argument by reference for the choice
+{														// an argument by reference for the choice
 	cout << "\n\tSelect between the following\n\n";
 
 	cout << "'1' for an array of integers";
