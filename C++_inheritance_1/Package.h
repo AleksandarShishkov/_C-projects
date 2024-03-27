@@ -8,51 +8,51 @@
 
 using namespace std;
 
-class Package													// base class Package
+class Package													
 {
 
 protected:
 
-	string name_sender;											// a string to hold the sender`s name
-	string name_recipient;											// a string to hold the recipient`s name
-	string address_sender;											// a string to hold the sender`s address
-	string address_recipient;										// a string to hold the recipient`s address
-	string city_sender;											// a string to hold the sender`s city
-	string city_recipient;											// a string to hold the recipient`s city
-	string state_sender;											// a srting to hold the sender`s state
-	string state_recipient;											// a string to hold the recipient`s state
-	string ZIP_sender;											// a string to hold the sender`s ZIP code
-	string ZIP_recipient;											// a string to hold the recipient`s ZIP code
-	double weight_package;											// a double to hold the weight of the package
-	double cost_per_kg;											// a double to hold the cost per kg
+	string name_sender;											
+	string name_recipient;											
+	string address_sender;											
+	string address_recipient;										
+	string city_sender;											
+	string city_recipient;											
+	string state_sender;											
+	string state_recipient;											
+	string ZIP_sender;											
+	string ZIP_recipient;											
+	double weight_package;											
+	double cost_per_kg;											
 
 public:
 
-	Package();												// default constructor
-	Package(string, string, string, string);								// constructor with 4 parameters for the names and										  
-														// addersses for both sneder and recipient
+	Package();												
+	Package(string, string, string, string);																		  
+														
 
-	void set_name_s();											// setter for the name of the sender
-	void set_name_r();											// setter for the name of the recipient
-	void set_address_s();											// setter for the address of the sender
-	void set_address_r();											// setter for the address of the recipient
-	void set_city_s();											// setter for the city of the sender
-	void set_city_r();											// setter for the city of the recipient
-	void set_state_s();											// setter for the state of the sender
-	void set_state_r();											// setter for the state of the recipient
-	void set_ZIP_s();											// setter for the ZIP of the sender
-	void set_ZIP_r();											// setter for the ZIP of the recipient
-	void set_weight_package();										// setter for the package`s weight
-	void set_cost_per_kg();											// setter for the cost per kg
+	void set_name_s();											
+	void set_name_r();											
+	void set_address_s();											
+	void set_address_r();											
+	void set_city_s();											
+	void set_city_r();											
+	void set_state_s();											
+	void set_state_r();											
+	void set_ZIP_s();											
+	void set_ZIP_r();											
+	void set_weight_package();										
+	void set_cost_per_kg();											
 
-	virtual double calculateCost();										// virtual function for calculation of the
-														// shipping cost by multiplying the weight by the cost per kg
-
-
-	void print();												// print() function to print the result
+	virtual double calculateCost();										
+														
 
 
-	~Package();												// destructor
+	void print();												
+
+
+	~Package();												
 
 };
 
