@@ -2,160 +2,160 @@
 
 
 
-#include "Game.h"												// including Game`s header
+#include "Game.h"												
 
 
-void show_score(int, int, int, string, string);									// a function prototype for the current score
+void show_score(int, int, int, string, string);									
 
 
 int main()
 {
 
 
-	Game* game = new Game;											// instantiating a pointer to Game`s object
+	Game* game = new Game;											
 
 	
-	static int draw_game = 0;										// a static integer to hold the score for game_draw
+	static int draw_game = 0;										
 
-	static int win_pl1 = 0;											// a static integer to hold the score for pl1
+	static int win_pl1 = 0;											
 
-	static int win_pl2 = 0;											// a static integer to hold the score for pl2
+	static int win_pl2 = 0;											
 
 
 
-	game->print_message();											// calling the print method
+	game->print_message();											
 
-	game->set_name_pl1();											// calling the setter for pl1`s name
-	game->set_name_pl2();											// calling the setter for pl2`s name
+	game->set_name_pl1();											
+	game->set_name_pl2();											
 	
-	game->set_who_first();											// calling the setter for who_first
+	game->set_who_first();											
 
-	if (game->get_who_first() == 1)										// validating the input
+	if (game->get_who_first() == 1)										
 	{
-		game->set_char_pl1();										// calling the setter for pl1`s char
-		game->set_char_pl2();										// calling the setter for pl2`s char
+		game->set_char_pl1();										
+		game->set_char_pl2();										
 	}
 	else
 	{
-		game->set_char_pl2();										// calling the setter for pl2`s char
-		game->set_char_pl1();										// calling the setter for pl1`s char
+		game->set_char_pl2();										
+		game->set_char_pl1();										
 	}
 	
 	
 	
-	while (game->get_n_game())										// entering the outer game-loop
+	while (game->get_n_game())										
 	{
-		if (draw_game != 0 || win_pl1 != 0 ||								// validating the score
+		if (draw_game != 0 || win_pl1 != 0 ||								
 			win_pl2 != 0)
 			game->set_who_first();														
 
-		game->print_board();										// printing the board
+		game->print_board();										
 
-		while (!game->get_v_board() || !game->get_v_pl1() ||						// entering the inner game-loop
+		while (!game->get_v_board() || !game->get_v_pl1() ||						
 			!game->get_v_pl2())
 		{
-			if (game->get_who_first() == 1)								// validating the who_first input
+			if (game->get_who_first() == 1)								
 			{
-				game->move_pl1();								// calling the setter for pl1`s move
-				game->print_board();								// printing the board
-				game->validate_board();								// validating the board
-				game->validate_pl1();								// validating the pl1`s win
+				game->move_pl1();								
+				game->print_board();								
+				game->validate_board();								
+				game->validate_pl1();								
 
 				if (game->get_v_pl1())													
 				{
-					win_pl1++;								// incrementing win_pl1
-					show_score(draw_game, win_pl1, win_pl2,					// calling show_score function
+					win_pl1++;								
+					show_score(draw_game, win_pl1, win_pl2,					
 						game->get_name_pl1(), game->get_name_pl2());
-					game->new_game();							// calling the setter for new_game
+					game->new_game();							
 					cin.get();									
-					break;									// breaking out of the loop
+					break;									
 				}
 				else if (game->get_v_board())
 				{
-					draw_game++;								// incrementing the draw_game
-					show_score(draw_game, win_pl1, win_pl2,					// calling show_score function
+					draw_game++;								
+					show_score(draw_game, win_pl1, win_pl2,					
 						game->get_name_pl1(), game->get_name_pl2());
-					game->new_game();							// calling the setter for new_game
+					game->new_game();							
 					cin.get();
-					break;									// breaking out of the loop
+					break;									
 				}
 
 
-				game->move_pl2();								// calling the setter for pl2`s move
-				game->print_board();								// printing the board
-				game->validate_board();								// validating the board
-				game->validate_pl2();								// validating the pl2`s win
+				game->move_pl2();								
+				game->print_board();								
+				game->validate_board();								
+				game->validate_pl2();								
 
 				if (game->get_v_pl2())
 				{
-					win_pl2++;								// incrementing win_pl2
-					show_score(draw_game, win_pl1, win_pl2,					// calling show_score function
+					win_pl2++;								
+					show_score(draw_game, win_pl1, win_pl2,					
 						game->get_name_pl1(), game->get_name_pl2());
-					game->new_game();							// calling the setter for new game
+					game->new_game();							
 					cin.get();
-					break;									// breaking out of the lool
+					break;									
 				}
 				else if (game->get_v_board())
 				{
-					draw_game++;								// incrementing draw_game
-					show_score(draw_game, win_pl1, win_pl2,					// calling show_score function
+					draw_game++;								
+					show_score(draw_game, win_pl1, win_pl2,					
 						game->get_name_pl1(), game->get_name_pl2());
-					game->new_game();							// calling the setter for new game
+					game->new_game();							
 					cin.get();
-					break;									// breaking out of the loop
+					break;									
 				}
 
 
 			}
 			else
 			{
-				game->move_pl2();								// calling the setter for pl2`s move
-				game->print_board();								// printing the board
-				game->validate_board();								// validating the board
-				game->validate_pl2();								// validating pl2`s win
+				game->move_pl2();								
+				game->print_board();								
+				game->validate_board();								
+				game->validate_pl2();								
 
 				if (game->get_v_pl2())
 				{
-					win_pl2++;								// incrementing win_pl2
-					show_score(draw_game, win_pl1, win_pl2,					// calling show_score function
+					win_pl2++;								
+					show_score(draw_game, win_pl1, win_pl2,					
 						game->get_name_pl1(), game->get_name_pl2());
-					game->new_game();							// calling the setter for new game
+					game->new_game();							
 					cin.get();
-					break;									// breaking out of the loop
+					break;									
 				}
 				else if (game->get_v_board())
 				{
-					draw_game++;								// incrementing draw_game
-					show_score(draw_game, win_pl1, win_pl2,					// calling the show_score function
+					draw_game++;								
+					show_score(draw_game, win_pl1, win_pl2,					
 						game->get_name_pl1(), game->get_name_pl2());
-					game->new_game();							// calling the setter for new game
+					game->new_game();							
 					cin.get();
-					break;									// breaking out of the loop
+					break;									
 				}
 				
 
-				game->move_pl1();								// calling the setter for pl1`s move
-				game->print_board();								// printing the board
-				game->validate_board();								// validating the board
-				game->validate_pl1();								// validating the pl1`s win
+				game->move_pl1();								
+				game->print_board();								
+				game->validate_board();								
+				game->validate_pl1();								
 
 				if (game->get_v_pl1())
 				{
-					win_pl1++;								// incrementing win_pl1
-					show_score(draw_game, win_pl1, win_pl2,					// calling the show_score function
+					win_pl1++;								
+					show_score(draw_game, win_pl1, win_pl2,					
 						game->get_name_pl1(), game->get_name_pl2());
-					game->new_game();							// calling the setter for new game
+					game->new_game();							
 					cin.get();
-					break;									// beraking out of the loop
+					break;									
 				}
 				else if (game->get_v_board())
 				{
-					draw_game++;								// incrementing draw_game
-					show_score(draw_game, win_pl1, win_pl2,					// calling the show_score function
+					draw_game++;								
+					show_score(draw_game, win_pl1, win_pl2,					
 						game->get_name_pl1(), game->get_name_pl2());
-					game->new_game();							// calling the setter for new game
+					game->new_game();							
 					cin.get();
-					break;									// breaking out of the loop
+					break;									
 				}
 			}
 		}
@@ -164,9 +164,9 @@ int main()
 
 
 
-	cout << "\nThe game has ended!\n";									// printing message indicating the end of the program
+	cout << "\nThe game has ended!\n";									
 
-	delete game;												// releasing the allocated memory
+	delete game;												
 
 
 
@@ -175,9 +175,9 @@ int main()
 
 
 
-void show_score(int draw_game, int v_pl1, int v_pl2, string s1, string s2)					// a function definition for thecurrent score
+void show_score(int draw_game, int v_pl1, int v_pl2, string s1, string s2)					
 {
-	cout << "\n\n\tCurrent result: \n";									// printing the formatted score
+	cout << "\n\n\tCurrent result: \n";									
 	cout << "\nScore '" << s1 << "': " << v_pl1 << '\n';
 	cout << "Score '" << s2 << "': " << v_pl2 << '\n';
 	cout << "Game draw: " << draw_game << '\n';
