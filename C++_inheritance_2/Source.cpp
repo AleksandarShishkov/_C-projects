@@ -7,109 +7,108 @@ using namespace std;
 //This program demonstrates inheritence between 2 base classes and 1 derived class
 
 
-class PersonalData												// base class #1
+class PersonalData												
 {
 protected:
 
-	string lName;												// a string to hold the last name
-	string fName;												// a string to hold the first name
-	string address;												// a string to hold the address
-	string city;												// a string to hold the city name
-	string ZIP;												// a string to hold the ZIP code
-	int phone;												// an integer to hold the telephone number
+	string lName;												
+	string fName;												
+	string address;												
+	string city;												
+	string ZIP;												
+	int phone;												
 
 public:
 
-	PersonalData()												// default consructor
+	PersonalData()												
 	{	}
 
-	PersonalData(string _lName, string _fName, int _phone) :	                                        // overloaded constructor with three parameters
+	PersonalData(string _lName, string _fName, int _phone) :	                                        
 		lName(_lName), fName(_fName), phone(_phone)
 	{
 
 	}
 
-	void set_lName()											// setter for the last name
+	void set_lName()											
 	{
 		cout << "\nEnter the last name : ";
 		cin >> lName;
 	}
-	void set_fName()											// setter for the first name
+	void set_fName()											
 	{
 		cout << "\nEnter the first name : ";
 		cin >> fName;
 	}
-	void set_address()											// setter for the address
+	void set_address()											
 	{
 		cout << "\nEnter the address : ";
 		getline(cin, address);
 	}
-	void set_city()												// setter for the city
+	void set_city()												
 	{
 		cout << "\nEnter the city : ";
 		cin >> city;
 	}
-	void set_ZIP()												// setter for the ZIP
+	void set_ZIP()												
 	{
 		cout << "\nEnter the ZIP code : ";
 		cin >> ZIP;
 	}
-	void set_phone()											// setter for the phone number
+	void set_phone()											
 	{
 		cout << "\nEnter the phone number : ";
 		cin >> phone;
 	}
-	string get_lName()											// getter for the last name
+	string get_lName()											
 	{
 		return lName;
 	}
-	string get_fName()											// getter for the first name
+	string get_fName()											
 	{
 		return fName;
 	}
-	string get_address()										       // getter for the address
+	string get_address()										       
 	{
 		return address;
 	}
-	string get_city()											// getter for the city
+	string get_city()											
 	{
 		return city;
 	}
-	string get_ZIP()											// getter for the ZIP code
+	string get_ZIP()											
 	{
 		return ZIP;
 	}
-	int get_phone()												// getter for the phone number
+	int get_phone()												
 	{
 		return phone;
 	}
 
-	~PersonalData()												// destructor
+	~PersonalData()												
 	{	}
 
 
 };
 
 
-class CustomerData												// base class #2
+class CustomerData												
 {
 
 protected:
 
-	int custNum;												// an integer to hold the customer`s number
-	bool mailingList;											// a boolean to hold the data for the mailing list preferences
-
+	int custNum;												
+	bool mailingList;											
 public:
 
-	CustomerData()												// default constructor
+	CustomerData()												
 	{	}
 
-	CustomerData(int _custNum) :custNum(_custNum)				                                // overloaded constructor with one parameter for the customer`s number
+	CustomerData(int _custNum) :custNum(_custNum)				                                
 	{
 
 	}
 
-	void set_custNum()											// setter for the customer`s number
+	void set_custNum()											
 	{
 		cout << "\nEnter the customer`s number (5 digits) : ";
 		cin >> custNum;
@@ -135,7 +134,7 @@ public:
 				isValid = true;
 		}
 	}
-	void set_mailingList()										        // setter for the mailing list information
+	void set_mailingList()										        
 	{
 		char choice;
 
@@ -154,36 +153,36 @@ public:
 			mailingList = false;
 
 	}
-	int get_custNum()											// getter for the customer`s number
+	int get_custNum()											
 	{
 		return custNum;
 	}
-	bool get_mailingList()										        // getter for the mailing list
+	bool get_mailingList()										        
 	{
 		return mailingList;
 	}
 
-	~CustomerData()												// destructor
+	~CustomerData()												
 	{	}
 
 };
 
 
-class PrefferedCustomer :										        // the derived class
+class PrefferedCustomer :										        
 	public PersonalData, public CustomerData
 {
 
 private:
 
-	double amountSpent;											// a double to hold the amount spent
-	double discount;											// a double to hold the discount
+	double amountSpent;											
+	double discount;											
 
 public:
 
-	PrefferedCustomer()											// default constructor
+	PrefferedCustomer()											
 	{	}
 
-	PrefferedCustomer(double _amountSpent, string _lName,		// overloaded constructor with five parameters
+	PrefferedCustomer(double _amountSpent, string _lName,		
 		string _fName, int _phone, int _custNum) :PersonalData(),
 		CustomerData()
 	{
@@ -194,7 +193,7 @@ public:
 		custNum = _custNum;
 	}
 
-	void set_amountSpent()										         // setter for the amount spent
+	void set_amountSpent()										         
 	{
 		cout << "\nHow much is the amount spent : $";
 		cin >> amountSpent;
@@ -205,11 +204,11 @@ public:
 			cin >> amountSpent;
 		}
 	}
-	double get_amountSpent()									         // getter for the amount spent
+	double get_amountSpent()									         
 	{
 		return amountSpent;
 	}
-	double get_discount()										         // getter for the discount percentage
+	double get_discount()										         
 	{
 		if (amountSpent <= 500)
 		{
@@ -232,7 +231,7 @@ public:
 			return discount;
 		}
 	}
-	void print()												// print function
+	void print()												
 	{
 		cout << "\nThe details for the customer are : \n\n";
 		cout << "First name:         " << get_fName();
