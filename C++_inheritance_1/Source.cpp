@@ -6,13 +6,13 @@
 int main()
 {
 
-	TwoDayPackage deliveryTDP1(4.12, "Andrew Simmons", "Lindsey Lime", "Flat 10, 1st Str",				// TDP obj1 with parameters
+	TwoDayPackage deliveryTDP1(4.12, "Andrew Simmons", "Lindsey Lime", "Flat 10, 1st Str",				
 		"Flat 1, 2nd Str");
-	TwoDayPackage* deliveryTDP2 = new TwoDayPackage;								// a pointer to TDP obj2 
+	TwoDayPackage* deliveryTDP2 = new TwoDayPackage;								 
 
-	OvernightPackage delivery_OP1(15.20, "Samantha Andrews", "Leam Lee", "Flat 2, 3rd Str",				// OP obj1 with parameters
+	OvernightPackage delivery_OP1(15.20, "Samantha Andrews", "Leam Lee", "Flat 2, 3rd Str",				
 		"Flat 15, 4th Str");
-	OvernightPackage delivery_OP2[2];										// an array of 2 OP objs
+	OvernightPackage delivery_OP2[2];										
 
 
 	// using TDP obj1
@@ -96,8 +96,8 @@ int main()
 
 	cout << "\n\nOP obj2\n";
 
-	for (int i = 0; i < 2; i++)											// using for loop for setting the data
-	{														// setting the details for the sender
+	for (int i = 0; i < 2; i++)											
+	{														
 
 		cout << "\nPackage " << i + 1 << '\n';
 
