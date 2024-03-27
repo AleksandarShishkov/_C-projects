@@ -3,20 +3,20 @@
 #ifndef DATE_H														
 #define DATE_H
 
-#include <iostream>													// including <iostream> directive
+#include <iostream>													
 
-using namespace std;													// using the namespace std
+using namespace std;													
 
-class Date														// defining class Date
+class Date														
 {
 
 private:
 
-	int month;													// an integer to hold the month
-	int day;													// an integer to hold the day
-	int year;													// an integer to hold the year
+	int month;													
+	int day;													
+	int year;													
 
-	enum months {													// enumeration for the months
+	enum months {													
 		January = 1, February, March,
 		April, May, June, July, August, September, October, November,
 		December
@@ -25,39 +25,38 @@ private:
 
 public:
 
-	Date();														// default constructor
-
-	class InvalidDay												// declaring a class for 
-	{														// the day exception
+	Date();														
+	class InvalidDay												 
+	{														
 	public:
-		int day;												// an integer to hold the day
+		int day;												
 
 	public:
 
-		InvalidDay(int d)											// constructor with parameter
-		{													// for the day
+		InvalidDay(int d)											
+		{													
 			day = d;
 		}
 
-		int get_day()												// getter for the day
+		int get_day()												
 		{
 			return day;
 		}
 	};
 
-	class InvalidMonth												// declarring a class for 
-	{														// the month exception
+	class InvalidMonth												 
+	{														
 	private:
-		int month;												// an integer to hold the month
+		int month;												
 
 	public:
 
-		InvalidMonth(int m)											// constructor with paramter
-		{													// for the month
+		InvalidMonth(int m)											
+		{													
 			month = m;
 		}
 
-		int get_month()												// getter for the month
+		int get_month()												
 		{
 			return month;
 		}
@@ -66,20 +65,20 @@ public:
 	};
 
 
-	class InvalidYear												// declaring a class for
-	{														// the year exception
+	class InvalidYear												
+	{														
 	private:
 
-		int year;												// an integer to hold the year
+		int year;												
 
 	public:
 
-		InvalidYear(int y)											// constructor with parameter
-		{													// for the year
+		InvalidYear(int y)											
+		{													
 			year = y;
 		}
 
-		int get_year()												// getter for the year
+		int get_year()												
 		{
 			return year;
 		}
@@ -87,21 +86,21 @@ public:
 
 
 
-	void set_month();												// setter for the Date class month
-	void set_day();													// setter for the Date class day
-	void set_year();												// setter for the Date class day
+	void set_month();												
+	void set_day();													
+	void set_year();												
 
-	void print_num();												// function to print the date in
-															// foramt month/day/year
+	void print_num();												
+															
 
-	void print_monthStr1();												// function to print the date in
-															// format string_month/day/year
+	void print_monthStr1();												
+															
 
-	void print_monthStr2();												// function to print the date in
-															// format day/string_month/year
+	void print_monthStr2();												
+															
 
 
-	~Date();													// destructor
+	~Date();													
 
 
 
