@@ -1,30 +1,7 @@
 
-
-
-
-		/*
-
-		This C++ program uses pure virtual class as a super-class
-		which is inherited by two derived classes.
-
-		It hold a pure virtual function which is overriden by the derived
-		classes and calculates their objects areas.
-
-		The values are validated trough exceptions.
-
-		*/
-
-
-
-
-
-
-
-
-#include "Circle.h"										// includeing the Circle header
-#include "Rectangle.h"										// including the Rectangle header
-
-#include <iomanip>										// including the iomanip library
+#include "Circle.h"										
+#include "Rectangle.h"										
+#include <iomanip>										
 
 
 
@@ -33,62 +10,62 @@
 int main()
 {
 
-	Circle* circle = new Circle;								// a pointer to Circle`s instance
+	Circle* circle = new Circle;								
 
 	try
-	{											// entering the try block
-												// validating the input
+	{											
+												
 
 
-		circle->set_center_x();								// calling the setter for the center_x
-		circle->set_center_y();								// calling the setter for the center_y
-		circle->set_radius();								// calling the setter for the radius
-		circle->calc_area();								// calling calc_area() function
+		circle->set_center_x();								
+		circle->set_center_y();								
+		circle->set_radius();								
+		circle->calc_area();								
 
 
-		cout << setprecision(2) << showpoint << fixed;					// formatting the output
-		cout << "\nThe area of the cirle is : " << circle->get_area() <<		//printing the result
+		cout << setprecision(2) << showpoint << fixed;					
+		cout << "\nThe area of the cirle is : " << circle->get_area() <<		
 			'\n';
 
 	}
 	catch (Circle::Exception_x& x)												
 	{
-		cout << "\nCannot provide '" << x.get_x() << "' as center X\n";			// printing an error message if exception is thrown for the center_x
+		cout << "\nCannot provide '" << x.get_x() << "' as center X\n";			
 	}
 	catch (Circle::Exception_y& y)
 	{
-		cout << "\nCannot provide '" << y.get_y() << "' as center Y\n";			// printing an error message if an exception is thrown for the center_y
+		cout << "\nCannot provide '" << y.get_y() << "' as center Y\n";			
 	}
 	catch (Circle::Exception_radius& r)
 	{
-		cout << "\nCannot provide '" << r.get__radius() << "' as radius\n";		// printing an error message if an exception is thrown for the radius
+		cout << "\nCannot provide '" << r.get__radius() << "' as radius\n";		
 	}
 
 
 
 
 	try
-	{											// entering the try block
-												// validating the input
+	{											
+												
 
-		Circle* circle_p = new Circle(1, 15, 2.2);					// a pointer to Circle`s instance with parameters
-												// for the center_x, the center_y and the radius
+		Circle* circle_p = new Circle(1, 15, 2.2);					
+												
 		
-		cout << "\nThe area of the cirle with parameters is : " <<			// printing the formatted output
+		cout << "\nThe area of the cirle with parameters is : " <<			
 			circle_p->get_area() << '\n';
 	
 	}
 	catch (Circle::Exception_x& x)
 	{
-		cout << "\nInvalid value for the center_x: " << x.get_x() << '\n';		// printing an error message if an exception is thrown for the center_x
+		cout << "\nInvalid value for the center_x: " << x.get_x() << '\n';		
 	}
 	catch (Circle::Exception_y& y)
 	{
-		cout << "\nInvalid value for the center_y: " << y.get_y() << '\n';		// printing an error message if an exception is thrown for the center_y
+		cout << "\nInvalid value for the center_y: " << y.get_y() << '\n';		
 	}
 	catch (Circle::Exception_radius& r)
 	{
-		cout << "\nInvalid value for the radius: " << r.get__radius() << '\n';		// printing an error message if an exception is thrown for the radius
+		cout << "\nInvalid value for the radius: " << r.get__radius() << '\n';		
 	}
 
 
@@ -97,58 +74,56 @@ int main()
 
 
 
-	Rectangle* rectangle = new Rectangle;							// a pointer to Rectangle`s instance
-
+	Rectangle* rectangle = new Rectangle;							
 	try
-	{											// entering the try block
-												// validating the input
+	{											
+												
 
-		rectangle->set_width();								// calling the setter for the width
-		rectangle->set_lenght();							// calling the setter for the lenght
-		rectangle->calc_area();								// calling the calc_area() function
-
-		cout << "\nThe rectangle`s area is '" << rectangle->get_area() <<		// printing the formatted output
+		rectangle->set_width();								
+		rectangle->set_lenght();							
+		rectangle->calc_area();								
+		cout << "\nThe rectangle`s area is '" << rectangle->get_area() <<		
 			"'\n";
 
 
 	}
 	catch (Rectangle::Exception_width& w)
 	{
-		cout << "\nInvalid value for the width: " << w.get_width() << '\n';		// printing an error message if an exception is thrown for the width
+		cout << "\nInvalid value for the width: " << w.get_width() << '\n';		
 	}
 	catch (Rectangle::Exception_lenght& l)
 	{
-		cout << "\nInvalid value for the lenght: " << l.get_lenght() << '\n';		// printing an error message if an exception is thrown for the lenght
+		cout << "\nInvalid value for the lenght: " << l.get_lenght() << '\n';		
 	}
 
 
 
 	try
-	{											// entering the try block
-												// validating the input
+	{											
+												
 
 
-		Rectangle* rectangle_p = new Rectangle(10, 20);					// a pointer to Rectangle`s instance with parameters for
-												// the width and the lenght
+		Rectangle* rectangle_p = new Rectangle(10, 20);					
+												
 
-		cout << "\nThe area of the recatangle with parameters is '" <<			// printing the formatted output
+		cout << "\nThe area of the recatangle with parameters is '" <<			
 			rectangle_p->get_area() << "'\n";
 
 	}
 	catch (Rectangle::Exception_width& w)
 	{
-		cout << "\nInvalid value for the width: " << w.get_width() << '\n';		// printing an error message if an exception is thrown for the width
+		cout << "\nInvalid value for the width: " << w.get_width() << '\n';		
 	}
 	catch (Rectangle::Exception_lenght& l)
 	{
-		cout << "\nInvalid value for the lenght: " << l.get_lenght() << '\n';		// printing an error message if an exception is thrown fot the lenght
+		cout << "\nInvalid value for the lenght: " << l.get_lenght() << '\n';		
 	}
 
 
-	cout << "\nThe program has ended\n";							// a message indicating that the program has ended
+	cout << "\nThe program has ended\n";							
 
 
-	delete circle, rectangle;								// releasing the allocated memory
+	delete circle, rectangle;								
 
 	return 0;
 }
