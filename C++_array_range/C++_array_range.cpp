@@ -1,18 +1,6 @@
 
 
 
-
-
-		/*
-		 A C++ program that uses templates
-		 for input and output of array elements
-		 in user-defined range.
-		 */
-
-
-
-
-
 #include <iostream>
 #include <cctype>
 
@@ -20,10 +8,10 @@
 using namespace std;
 
 
-template <typename T>													// template definition for inputting the array elements
+template <typename T>													
 void get_data(T* arr, int size, int& lowSubscript, int& highSubscript)
 {
-	cout << "\nEnter " << size << " elements of type '"<< typeid(T).name() << "': \n";				// promting the user to input the elements
+	cout << "\nEnter " << size << " elements of type '"<< typeid(T).name() << "': \n";				
 	
 	for (int i = 0; i < size; i++)
 	{
@@ -31,20 +19,20 @@ void get_data(T* arr, int size, int& lowSubscript, int& highSubscript)
 		cin >> *(arr + i);
 	}
 		
-	cout << "\nEnter the low subscript (1 - " << size << ")> ";							// promting the user to input the low subscript
+	cout << "\nEnter the low subscript (1 - " << size << ")> ";							
 	cin >> lowSubscript;
 
-	while (lowSubscript < 1 || lowSubscript > size)									// validating the input
+	while (lowSubscript < 1 || lowSubscript > size)									
 	{
 		cout << "\n'" << lowSubscript << "' cannot be a valid value. Try again> ";
 		cin >> lowSubscript;
 	}
 
 
-	cout << "\nEnter the high subscript (" << lowSubscript << " - " << size << ")> ";				// promting the user to input the high subscript
+	cout << "\nEnter the high subscript (" << lowSubscript << " - " << size << ")> ";				
 	cin >> highSubscript;
 
-	while (highSubscript < lowSubscript || highSubscript > size)							// validating the input
+	while (highSubscript < lowSubscript || highSubscript > size)							
 	{
 		cout << "\n'" << highSubscript << "' cannot be a valid value. Try again> ";
 		cin >> highSubscript;
@@ -53,18 +41,18 @@ void get_data(T* arr, int size, int& lowSubscript, int& highSubscript)
 }
 
 
-template <typename T>													// a template definition for printing the selected elements
+template <typename T>													
 void printArray(const T* const array, int lowSubscript, int highSubscript)
 {
 
-	if (lowSubscript != highSubscript)										// validating the low and high subscripts
+	if (lowSubscript != highSubscript)										
 		cout << "\nElements " << lowSubscript << " - " << highSubscript << " are:\n";
 	else
 		cout << "\nElement " << lowSubscript << " is:\n";
 
 
 
-	for (int i = lowSubscript - 1; i < highSubscript; i++)								// printing the elements
+	for (int i = lowSubscript - 1; i < highSubscript; i++)								
 	{
 		cout << "#" << i + 1 << "> " << *(array + i) << '\n';
 	}
@@ -77,24 +65,24 @@ void printArray(const T* const array, int lowSubscript, int highSubscript)
 int main()
 {
 
-	const int aCount = 10;												// an integer to hold the size for the array of integers
-	const int bCount = 10;												// an integer to hold the size for the arrat of doubles
-	const int cCount = 10;												// an integer to hold the size for the array of chars
+	const int aCount = 10;												
+	const int bCount = 10;												
+	const int cCount = 10;												
 
-	int a[aCount];													// an array of integers
-	double b[bCount];												// an array of doubles
-	char c[cCount];													// an array of chars
+	int a[aCount];													
+	double b[bCount];												
+	char c[cCount];													
 
-	char choice;													// a char to hold the user`s choice
-	bool another_try = true;											// a boolean to control the loop
+	char choice;													
+	bool another_try = true;											
 
 	while (another_try)
 	{
 
-		int lowSubscript;											// an integer to hold the low subscript
-		int highSubscript;											// an integer to hold the high subscript
+		int lowSubscript;											
+		int highSubscript;											
 
-		get_data(a, aCount, lowSubscript, highSubscript);							// calling the templates with the three different types
+		get_data(a, aCount, lowSubscript, highSubscript);							
 		printArray(a, lowSubscript, highSubscript);													
 
 		get_data(b, bCount, lowSubscript, highSubscript);
@@ -104,24 +92,24 @@ int main()
 		printArray(c, lowSubscript, highSubscript);
 
 
-		cout << "\nAnother try (y/n)> ";									// prompting the user to select y/n for another try
+		cout << "\nAnother try (y/n)> ";									
 		cin >> choice;
 
-		while (tolower(choice) != 'y' && tolower(choice) != 'n')						// validating the input
+		while (tolower(choice) != 'y' && tolower(choice) != 'n')						
 		{
 			cout << "\n'" << choice << "' cannot be a valid choice. Try again> ";
 			cin >> choice;
 		}
 
 		if (choice == 'y')
-			another_try = true;										// setting another_try to true
+			another_try = true;										
 		else
-			another_try = false;										// setting another_try to false
+			another_try = false;										
 
 	}
 
 
-	cout << "\nThe program has ended!\n";										// a message indicating the end of the program
+	cout << "\nThe program has ended!\n";										
 
 
 
