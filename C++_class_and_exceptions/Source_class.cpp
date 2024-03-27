@@ -1,66 +1,46 @@
 
 
 
-
-		/*
-		 A C++ program which prompts the user to
-		 enter the lenght and the width of a
-		 rectangle and calculates it`s area
-		 and perimeter.
-
-		 The validation is managed trough an
-		 exception handlers.
-
-		 If no exceptions are caught the result
-		 is printed on the screen.
-		*/
-
-
-
-
-
-
-#include "Rectangle.h"												// including the Rectangle`s class header
-#include <iomanip>												// including iomanip for the setprecision() methond
+#include "Rectangle.h"												
+#include <iomanip>												
 
 int main()
 {
 
-	Rectangle* rectangle = new Rectangle;									// a pointer to the Rectangle`s class object
+	Rectangle* rectangle = new Rectangle;									
 
-	double area;												// a double to hold the area
-	double perimeter;											// a double to hold the perimeter
+	double area;												
+	double perimeter;											
 
 
 	try
 	{
-		rectangle->set_lenght();									// calling the setter for the lenght
+		rectangle->set_lenght();									
 
-		rectangle->set_width();										// calling the setter for the width
+		rectangle->set_width();										
 
-		area = rectangle->get_area();									// calculating the area, assigning it to the area variable
-		perimeter = rectangle->get_perimeter();								// calculating the perimeter, assigning it to the perimeter variable
+		area = rectangle->get_area();									
+		perimeter = rectangle->get_perimeter();								
+		cout << setprecision(2) << fixed << showpoint;							
 
-		cout << setprecision(2) << fixed << showpoint;							// formatting the outpu
-
-		cout << "\n\tArea:        " << area;								// printing the area
-		cout << "\n\tPerimeter:   " << perimeter;							// printing the perimeter
+		cout << "\n\tArea:        " << area;								
+		cout << "\n\tPerimeter:   " << perimeter;							
 	}
-	catch(Rectangle::Exception_lenght l)									// validating the lenght
+	catch(Rectangle::Exception_lenght l)									
 	{
-		cout << "\n'" << l.get_l() << "' isn`t " <<							// printing an erroneous message if an exception for the lenght
-			"valid value for the lenght\n";								// is caught
+		cout << "\n'" << l.get_l() << "' isn`t " <<							
+			"valid value for the lenght\n";								
 	}
-	catch (Rectangle::Exception_width w)									// validating the width
+	catch (Rectangle::Exception_width w)									
 	{
-		cout << "\n'" << w.get_w() << "' isn`t " <<							// printing an erroneous message if an exception for the width
-			"valid value for the width\n";								// is caught
+		cout << "\n'" << w.get_w() << "' isn`t " <<							
+			"valid value for the width\n";								
 	}
 
 
-	cout << "\n\nThe program has ended!\n";									// printing a message indicating the end of the program
+	cout << "\n\nThe program has ended!\n";									
 
-	delete rectangle;											// freeing the allocated memory
+	delete rectangle;											
 
 
 	return 0;
