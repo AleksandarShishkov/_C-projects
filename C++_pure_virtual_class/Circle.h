@@ -3,103 +3,103 @@
 
 #ifndef CIRCLE_H
 #define CIRCLE_H
-#include "BasicShape.h"										// including the BasicShape header
+#include "BasicShape.h"										
 
-class Circle :public BasicShape									// defining derived class Circle
+class Circle :public BasicShape									
 {
 
 private:
 
-	long center_x;										// a long integer to hold the center_x
-	long center_y;										// a long integer to hold the center_y
-	double radius;										// a double to hold the circle`s radius
+	long center_x;										
+	long center_y;										
+	double radius;										
 
-	const double pi = 3.14;									// a contant double pi
+	const double pi = 3.14;									
 
 
 public:
 
 
-	Circle();										// default constructor
-	Circle(long, long, double);								// constructor with parameters for the center_x,
-												// the center_y and the radius
+	Circle();										
+	Circle(long, long, double);								
+												
 
 
-	class Exception_x									// exception class for the center_x
+	class Exception_x									
 	{
 
 	private:
 
-		long x;										// a long integer to hold the value
+		long x;										
 
 
 	public:
 
-		void set_x(Circle& c)								// setter with parameter for the center_x
+		void set_x(Circle& c)								
 		{
-			x = c.center_x;								// assigning the value to x
+			x = c.center_x;								
 		}
 
-		long get_x()									// getter for x
+		long get_x()									
 		{
-			return x;								// returning x
+			return x;								
 		}
 
 	};
 
-	class Exception_y									// exception class for the center_y
+	class Exception_y									
 	{
 	private:
 
-		long y;										// a long integer to hold the value
+		long y;										
 
 	public:
 
-		void set_y(Circle& c)								// setter with parameter for the center_y
+		void set_y(Circle& c)								
 		{
-			y = c.center_y;								// assigning the value to y
+			y = c.center_y;								
 		}
 
-		long get_y()									// getter for y
+		long get_y()									
 		{
-			return y;								// returning y
+			return y;								
 		}
 
 
 	};
 
-	class Exception_radius									// exception class for the radius
+	class Exception_radius									
 	{
 
 	private:
 
-		double _radius;									// a double to hold the value
+		double _radius;									
 
 	public:
 
-		void set__radius(Circle& c)							// setter with paramterer for the radius
+		void set__radius(Circle& c)							
 		{
-			_radius = c.radius;							// assigning the value to _radius
+			_radius = c.radius;							
 		}
 
-		double get__radius()								// getter for _radius
+		double get__radius()								
 		{
-			return _radius;								// returning _radius
+			return _radius;								
 		}
 
 	};
 
-	void set_center_x();									// setter for the center_x
-	void set_center_y();									// setter for the center_y
-	void set_radius();									// setter for the radius
+	void set_center_x();									
+	void set_center_y();									
+	void set_radius();									
 
-	double get_center_x();									// getter for the center_x
-	double get_center_y();									// getter for the center_y
+	double get_center_x();									
+	double get_center_y();									
 			
-	double calc_area();									// overriding the pure virtual function calc_area()
+	double calc_area();									
 
 
-	~Circle();										// destructor
+	~Circle();										
 
 };
 
