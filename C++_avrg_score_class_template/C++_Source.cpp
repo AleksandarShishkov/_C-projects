@@ -1,56 +1,41 @@
 
+#include "TestScores.h"													
 
-
-		/*
-		 A C++ program that uses a template class
-		 to allocate an array of user-defined type. 
-		 It then calculates the average score
-		 and display`s it on the screen.
-
-		 The validation is handled trough
-		 two exception classes.
-		 */
-
-
-
-#include "TestScores.h"													// including TestScores header file
-
-#include <iomanip>													// including iomanip for formatting the output
+#include <iomanip>													
 
 int main()
 {
 
 
-	bool new_try = true;												// a boolean set to true to control the while-loop
-	char newTry;													// a char to hold the users input
+	bool new_try = true;												
+	char newTry;													
 
 
 
 
 	try
 	{
-		TestScores<double>* testScores = new TestScores<double>(10);						// a pointer to a TestScore object of type double with
-															// parameter for the size of the array
+		TestScores<double>* testScores = new TestScores<double>(10);						
+															
 
 
-		cout << setprecision(2) << fixed << showpoint;								// formatting the output
+		cout << setprecision(2) << fixed << showpoint;								
 
+		cout << "\nEnter " << static_cast<int>(testScores->get_size()) << " elements (1 - 100): \n";		
+		testScores->set_array();										
 
-		cout << "\nEnter " << static_cast<int>(testScores->get_size()) << " elements (1 - 100): \n";		// promring the user to enter the elements
-		testScores->set_array();										// calling set_array() method
-
-		cout << "\nThe averge score is: " << testScores->get_average() << '\n';					// printing the average score
+		cout << "\nThe averge score is: " << testScores->get_average() << '\n';					
 
 
 
 	}
 	catch (TestScores<double>::Exception_size<double>* e)
 	{
-		cout << "\n'" << e->get_size() << "' cannot be a valid size!\n";					// printing error message if an exception is cought for the size
+		cout << "\n'" << e->get_size() << "' cannot be a valid size!\n";					
 	}
 	catch (TestScores<double>::Exception_score<double>* e)
 	{
-		cout << "\n'" << e->get_num() << "' cannot be a valid score!\n";					// printing error message if an exception is cought fo the score
+		cout << "\n'" << e->get_num() << "' cannot be a valid score!\n";					
 	}
 
 
@@ -61,33 +46,32 @@ int main()
 
 		try
 		{
-			TestScores<float>* testScoresF = new TestScores<float>;						// a pointer to a TestScore object of type float
+			TestScores<float>* testScoresF = new TestScores<float>;						
 
-			testScoresF->set_size();									// colling the set_size() method
+			testScoresF->set_size();									
 
-			cout << setprecision(2) << fixed << showpoint;							// formatting the output
+			cout << setprecision(2) << fixed << showpoint;							
 
 
-			cout << "\nEnter " << static_cast<int>(testScoresF->get_size()) << " elements (1 - 100): \n";	// promting the user to enter elements
-			testScoresF->set_array();
+			cout << "\nEnter " << static_cast<int>(testScoresF->get_size()) << " elements (1 - 100): \n";				testScoresF->set_array();
 
-			cout << "\nThe average score is: " << testScoresF->get_average() << '\n';			// printing the average score
+			cout << "\nThe average score is: " << testScoresF->get_average() << '\n';			
 		}
 		catch (TestScores<double>::Exception_size<double>* e)
 		{
-			cout << "\n'" << e->get_size() << "' cannot be a valid size!\n";				// printing error message if an exception is cought for the size
+			cout << "\n'" << e->get_size() << "' cannot be a valid size!\n";				
 		}
 		catch (TestScores<double>::Exception_score<double>* e)
 		{
-			cout << "\n'" << e->get_num() << "' cannot be a valid score!\n";				// printing error message if an exception is cought fo the score
+			cout << "\n'" << e->get_num() << "' cannot be a valid score!\n";				
 		}
 
 
 
-		cout << "\Another try? (y/n)> ";									// promting the user to selet another try
+		cout << "\Another try? (y/n)> ";									
 		cin >> newTry;
 
-		while (newTry != 'y' && newTry != 'n')									// validating the input
+		while (newTry != 'y' && newTry != 'n')									
 		{
 			cout << "\nInvalid input. Try again> ";
 			cin >> newTry;
@@ -100,7 +84,7 @@ int main()
 
 	}
 
-	cout << "\n\tThe program has ended!\n";										// a message indicating that the program has ended
+	cout << "\n\tThe program has ended!\n";										
 
 
 	return 0;
