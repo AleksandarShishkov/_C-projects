@@ -1,47 +1,47 @@
 include "Products.h"
 
 
-Products::Products() :barcode(0), name(" ")									// declaring the default constructor
+Products::Products() :barcode(0), name(" ")									
 {
 
 }
 
-Products::Products(long int _barcode, string _name) :								// declaring the overloaded constructor to assign  
-	barcode(_barcode), name(_name)										// the parameters to the member variables
+Products::Products(long int _barcode, string _name) :								  
+	barcode(_barcode), name(_name)										
 {
 
 }
 
-void Products::setCode()											// declaring the setter for the barcode
+void Products::setCode()											
 {
 	cout << "\nEnter the barcode of the product> ";
 	cin >> barcode;
 }
 
-int Products::getCode()												// declaring the getter for the barcode
+int Products::getCode()												
 {
 	return barcode;
 }
 
-void Products::setName()											// declaring the setter for the name
+void Products::setName()											
 {
 	cout << "\nEnter the name of the product> ";
 	cin >> name;
 }
 
-string Products::getName()											// declaring the getter for the name
+string Products::getName()											
 {
 	return name;
 }
 
-void Products::printer()											// declaring the virtual printer function
+void Products::printer()											
 {
 	cout << "\nName: " << name <<
 		"\nCode: " << barcode <<
 		"\n";
 }
 
-Products::~Products()												// declaring the virtual destructor
+Products::~Products()												
 {
 
 }
