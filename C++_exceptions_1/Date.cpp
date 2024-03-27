@@ -1,49 +1,49 @@
-#include "Date.h"													// including the Date header
+#include "Date.h"													
 
 
-Date::Date() :month(0), day(0), year(0)											// assigning default values to
-{															// month, day and year
+Date::Date() :month(0), day(0), year(0)											
+{															
 
 }
 
-void Date::set_month()													// prompting the user to enter
-{															// the month
+void Date::set_month()													
+{															
 	cout << "\nEnter the month: ";
 	cin >> month;
 
-	if (month < 1 || month>12)											// validating the input
-		throw InvalidMonth(month);										// throwing the exception
+	if (month < 1 || month>12)											
+		throw InvalidMonth(month);										
 
 }
-void Date::set_day()													// prompting the user to enter
-{															// the day
+void Date::set_day()													
+{															
 	cout << "\nEnter the day: ";
 	cin >> day;
 
-	if (day < 1 || day>31)												// validating the input
-		throw InvalidDay(day);											// throwing the exception
+	if (day < 1 || day>31)												
+		throw InvalidDay(day);											
 
 }
-void Date::set_year()													// prompting the user to enter
-{															// the year
+void Date::set_year()													
+{															
 	cout << "\nEnter the year: ";
 	cin >> year;
 
-	if (year < 1000 || year > 9999)											// validating the input
-		throw InvalidYear(year);										// throwing the exception
+	if (year < 1000 || year > 9999)											
+		throw InvalidYear(year);										
 }
 
 
-void Date::print_num()													// formatting the output
+void Date::print_num()													
 {
 	cout << '\n' << month << "/" << day << "/" << year;
 
 }
-void Date::print_monthStr1()												// formating the output
+void Date::print_monthStr1()												
 {
 
-	switch (month)													// using swith statement for 
-	{														// validation and formatted output
+	switch (month)													 
+	{														
 	case January:
 		cout << "\nJanuary " << day << ", " << year << '\n';
 		break;
@@ -95,11 +95,11 @@ void Date::print_monthStr1()												// formating the output
 	}
 
 }
-void Date::print_monthStr2()												// formatting the output
+void Date::print_monthStr2()												
 {
 
-	switch (month)													// using switch statement for 
-	{														// for validation and formatted output
+	switch (month)													 
+	{														
 	case January:
 		cout << day << " January " << year << '\n';
 		break;
