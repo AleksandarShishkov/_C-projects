@@ -5,38 +5,38 @@
 
 using namespace std;
 
-class Employee												// base class Employee
+class Employee												
 {
 
 protected:
 
-	string emp_fName;										// string that holds the first name
-	string emp_lName;										// string that holds the last name			
-	int empNum;											// an int that holds the emp number
-	string hireDate;										// a string that holds the hiring date
+	string emp_fName;										
+	string emp_lName;													
+	int empNum;											
+	string hireDate;										
 
 
 public:
 
-	Employee()											// default constructor
+	Employee()											
 	{	}
 
-	Employee(string _fName, string _lName) : emp_fName(_fName), emp_lName(_lName)			// constructor with 2 string parameters for the first and last names
+	Employee(string _fName, string _lName) : emp_fName(_fName), emp_lName(_lName)			
 	{	}
 
 
 
-	void set_fName()										// setter for the first name
+	void set_fName()										
 	{
 		cout << "\nEnter the first name : ";
 		cin >> emp_fName;
 	}
-	void set_lName()										// setter for the last name
+	void set_lName()										
 	{
 		cout << "\nEner the last name : ";
 		cin >> emp_lName;
 	}
-	void set_empNum()										// setter for the number
+	void set_empNum()										
 	{
 		cout << "\nEnter the employee`s number (5 digits) : ";
 		cin >> empNum;
@@ -47,7 +47,7 @@ public:
 			cin >> empNum;
 		}
 	}
-	bool validate_num(int num)									// validate the number
+	bool validate_num(int num)									
 	{
 		int count = 0;
 		while (num != 0)
@@ -61,41 +61,41 @@ public:
 		else
 			return true;
 	}
-	void set_hireDate()										// setter for the hiring date
+	void set_hireDate()										
 	{
 		cout << "\nEnter the hiring date (day/month/year) : ";
 		cin >> hireDate;
 	}
-	string get_fName()										// getter for the first name
+	string get_fName()										
 	{
 		return emp_fName;
 	}
-	string get_lName()										// getter for the last name
+	string get_lName()										
 	{
 		return emp_lName;
 	}
-	int get_empNum()										// getter for the number
+	int get_empNum()										
 	{
 		return empNum;
 	}
-	string get_hireDate()										// getter for the hiring date
+	string get_hireDate()										
 	{
 		return hireDate;
 	}
-	void b_print()											// function for printing the results
+	void b_print()											
 	{
 		cout << "\nThe details for '" << emp_fName << ' ' << emp_lName << "' are : \n\nFirst name: " << setw(10) << emp_fName
 			<< "\nLast name: " << setw(12) << emp_lName << "\nNumber: " << setw(14) << empNum << "\nHiring date: " << setw(12) << hireDate;
 	}
 
-	~Employee()											// destructor
+	~Employee()											
 	{	}
 
 };
 
 
 
-class Worker :public Employee										// derived class Worker
+class Worker :public Employee										
 {
 
 private:
@@ -105,15 +105,15 @@ private:
 
 public:
 
-	Worker()											// default constructor
+	Worker()											
 	{	}
-	Worker(int _shift, string _fName, string _lName) :Employee(_fName, _lName)			// constructor with parameters for the shift, first and last names
+	Worker(int _shift, string _fName, string _lName) :Employee(_fName, _lName)			
 	{
 		shift = _shift;
 		emp_fName = _fName;
 		emp_lName = _lName;
 	}
-	void set_shift()										// setter for the shift with validation
+	void set_shift()										
 	{
 		cout << "\nEnter the shift (1 - day, 2 - night) : ";
 		cin >> shift;
@@ -124,7 +124,7 @@ public:
 			cin >> shift;
 		}
 	}
-	void set_h_payRate()										// setter for the pay rate with validation
+	void set_h_payRate()										
 	{
 		cout << "\nEnter the hourly pay rate : $";
 		cin >> h_payRate;
@@ -135,7 +135,7 @@ public:
 			cin >> h_payRate;
 		}
 	}
-	void d_print()											// printing the results
+	void d_print()											
 	{
 		b_print();
 		double weekly_payRate = (h_payRate * 8) * 7;
@@ -150,11 +150,11 @@ public:
 
 int main()
 {
-	Worker* worker1 = new Worker;									// derived class pointer to worker1 object
+	Worker* worker1 = new Worker;									
 	Worker worker2(1, "Susan", "Hudson");
-	Worker* ptr_wker2 = &worker2;									// derived class pointer to worker2 object
+	Worker* ptr_wker2 = &worker2;									
 
-													//details for worker 1
+													
 
 	cout << "\nEnter the details for employee 1: \n";
 
