@@ -1,68 +1,68 @@
-#include "NumDays.h"										// including the NumDays geader
+#include "NumDays.h"										
 
 
-NumDays::NumDays(int _numHours) :numHours(_numHours)						// defining the constructor
-{												// setting numHours to user defined variable
+NumDays::NumDays(int _numHours) :numHours(_numHours)						
+{												
 
 }
 
-void NumDays::set_numHours()									// setting the hours
+void NumDays::set_numHours()									
 {
 	cout << "\nSet the number of the hours: ";
 	cin >> numHours;
 }
 
-int NumDays::get_numHours()									// getting the hours
+int NumDays::get_numHours()									
 {
 	return numHours;
 }
 
-double NumDays::get_numDays()									// setting the days
+double NumDays::get_numDays()									
 {
-	numDays = double(numHours) / 8;								// calculating the result
-	return numDays;										// return the result
+	numDays = double(numHours) / 8;								
+	return numDays;										
 }
 
-NumDays NumDays::operator+(NumDays& obj)							// definition of the '+' operator
+NumDays NumDays::operator+(NumDays& obj)							
 {
 	obj.numHours += this->numHours;
 	return obj;
 }
 
-NumDays NumDays::operator-(NumDays& obj)							// definition of the -' operator
+NumDays NumDays::operator-(NumDays& obj)							
 {
 	obj.numHours -= this->numHours;
 	return obj;
 }
 
-NumDays NumDays::operator++()									// definition of the prefix '++' operator
+NumDays NumDays::operator++()									
 {
 	++numHours;
 	return NumDays(numHours);
 }
 
-NumDays NumDays::operator++(int)								// definition of the postfix '++' operator
+NumDays NumDays::operator++(int)								
 {
 	NumDays h(numHours);
 	numHours++;
 	return h;
 }
 
-NumDays NumDays::operator--()									// definition of the prefix '--' operator
+NumDays NumDays::operator--()									
 {
 	NumDays h(numHours);
 	--numHours;
 	return h;
 }
 
-NumDays NumDays::operator--(int)								// definition of the postfix '--' operator
+NumDays NumDays::operator--(int)								
 {
 	NumDays h(numHours);
 	numHours++;
 	return h;
 }
 
-NumDays::~NumDays()										// defining the destructor
+NumDays::~NumDays()										
 {
 
 }
