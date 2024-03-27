@@ -1,14 +1,14 @@
-#include "Month.h"										// including the Month.h header file
+#include "Month.h"										
 
 
 
-Month::Month() :name("January"), monthNum(1)							// declaring the default constructor
+Month::Month() :name("January"), monthNum(1)							
 {
 
 }
-Month::Month(string _name) : name(_name)							// declaring the overloaded constructor with string as a parameter 
+Month::Month(string _name) : name(_name)							 
 {
-	if (name == "January")									// and validating the result
+	if (name == "January")									
 		monthNum = 1;
 	else if (name == "February")
 		monthNum = 2;
@@ -39,9 +39,9 @@ Month::Month(string _name) : name(_name)							// declaring the overloaded const
 		monthNum = 0;
 	}
 }
-Month::Month(int _monthNum) :monthNum(_monthNum)						// declaring the overloaded constructor with integer as a parameter
+Month::Month(int _monthNum) :monthNum(_monthNum)						
 {
-	if (monthNum == 1)									// validating the result
+	if (monthNum == 1)									
 		name = "January";
 	else if (monthNum == 2)
 		name = "February";
@@ -73,74 +73,74 @@ Month::Month(int _monthNum) :monthNum(_monthNum)						// declaring the overloade
 	}
 }
 
-void Month::set_name()										// declaring the setter for the name
+void Month::set_name()										
 {
 	cout << "\nEnter the name of the month> ";
 	cin >> name;
 }
-string Month::get_name()									// declaring the getter for the name
+string Month::get_name()									
 {
 	return name;
 }
 
-void Month::set_monthNum()									// declaring the setter for the month`s number
+void Month::set_monthNum()									
 {
 	cout << "\nEnter the number of the month> ";
 	cin >> monthNum;
 
-	while (monthNum < 1 || monthNum>12)							// validating the input
+	while (monthNum < 1 || monthNum>12)							
 	{
 		cout << "\nInvalid input. Enter (1 - 12)> ";
 		cin >> monthNum;
 	}
 }
-int Month::get_monthNum()									// declaring the getter for the month`s number
+int Month::get_monthNum()									
 {
 	return monthNum;
 }
 
-Month Month::operator++()									// declaring the prefix '++' operator
+Month Month::operator++()									
 {
 
 	Month obj;
 	this->monthNum = ++monthNum;
-	if (monthNum == 13)									// validating the result
+	if (monthNum == 13)									
 		monthNum = 1;
 	return obj;
 }
-Month Month::operator++(int)									// declaring the postfix '++' operator
+Month Month::operator++(int)									
 {
 
 	Month obj;
 	this->monthNum = monthNum++;
-	if (monthNum == 13)									// validating the result
+	if (monthNum == 13)									
 		monthNum = 1;
 	return obj;
 }
-Month Month::operator--()									// declaring the prefix '--' operator
+Month Month::operator--()									
 {
 
 	Month obj;
 	this->monthNum = --monthNum;
-	if (monthNum == 0)									// validating the result
+	if (monthNum == 0)									
 		monthNum = 12;
 	return obj;
 
 }
-Month Month::operator--(int)									// declaring the postfix '--' operator
+Month Month::operator--(int)									
 {
 
 	Month obj;
 	this->monthNum = monthNum--;
-	if (monthNum == 0)									// validating the result
+	if (monthNum == 0)									
 		monthNum = 12;
 	return obj;
 }
 
-void Month::print()										// declaring the print function
+void Month::print()										
 {
 
-	if (monthNum == 1)									// validating the output
+	if (monthNum == 1)									
 		name = "January";
 	else if (monthNum == 2)
 		name = "February";
@@ -169,7 +169,7 @@ void Month::print()										// declaring the print function
 	cout << "The month`s name is " << name << "\n";
 }
 
-Month::~Month()											// declaring the destructor
+Month::~Month()											
 {
 
 }
