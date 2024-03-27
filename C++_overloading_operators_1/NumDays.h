@@ -1,40 +1,37 @@
 #ifndef NUMDAYS_H
 #define	NUMDAYS_H
 
-#include <iostream>															// including the iostream library
-#include <iomanip>															// including iomanip library
+#include <iostream>															
+#include <iomanip>															
 
-using namespace std;															// using std namespace
+using namespace std;															
 
-class NumDays																// class NumDays definition
+class NumDays																
 {
 private:
 
-	int numHours;															// an integer to hold the number of hours
-	double numDays;															// adouble to hold the number of days
-
+	int numHours;															
+	double numDays;															
 public:
 
-	NumDays(int);															// overloaded constructor
+	NumDays(int);															
 
-	void set_numHours();														// setter for the hours
-	int get_numHours();														// getter for the hours
+	void set_numHours();														
+	int get_numHours();														
 
-	void set_numDays();														// setter for the days
-	double get_numDays();														// getter for the days
+	void set_numDays();														
+	double get_numDays();														
 
-	NumDays operator+(NumDays& obj);												// overloaded '+' operator
-	NumDays operator-(NumDays& obj);												// overloade '-' operator
+	NumDays operator+(NumDays& obj);												
+	NumDays operator-(NumDays& obj);												
+	NumDays operator++();														
+	NumDays operator++(int);													
 
-	NumDays operator++();														// overloaded prefix '++' operator
-	NumDays operator++(int);													// overloaded postfix '++' operator
-
-	NumDays operator--();														// overloaded prefix '--' operator
-	NumDays operator--(int);													// overloaded postfix '--' operator
+	NumDays operator--();														
+	NumDays operator--(int);													
 
 
-	~NumDays();															// destructor
-
+	~NumDays();															
 
 };
 
