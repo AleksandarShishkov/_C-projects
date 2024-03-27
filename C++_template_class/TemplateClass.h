@@ -7,30 +7,28 @@ using namespace std;
 
 
 template <typename T>
-class TemplateClass													// template class TemplateClass
+class TemplateClass													
 {
 
 private:
 
-	T num1;														// a template variable to hold num1
-	T num2;														// a template variable to hold num2
-	T num3;														// a template variable to hold num3
+	T num1;														
+	T num2;														
+	T num3;														
 
 
 public:
 
-	TemplateClass();												// default constructor
+	TemplateClass();												
+	TemplateClass(T, T, T);												
 
-	TemplateClass(T, T, T);												// constructor with three parameters
+	void set_num1();												
+	void set_num2();												
+	void set_num3();												
 
-
-	void set_num1();												// setter for num1
-	void set_num2();												// setter for num2
-	void set_num3();												// setter for num3
-
-	T get_smallest();												// getter for the smallest value
-	T get_largest();												// getter for the largest value
-	T get_middle();													// getter for the middle value
+	T get_smallest();												
+	T get_largest();												
+	T get_middle();													
 
 
 
@@ -38,7 +36,7 @@ public:
 
 
 
-template <typename T>													// implementing the default constructor
+template <typename T>													
 TemplateClass<T>::TemplateClass() : num1(0), num2(0),
 num3(0)
 {
@@ -47,17 +45,17 @@ num3(0)
 
 
 
-template <typename T>													// implementing the constructor with parameters
+template <typename T>													
 TemplateClass<T>::TemplateClass(T num1, T num2, T num3)
 {
-	this->num1 = num1;												// assigning the value to num1
-	this->num2 = num2;												// assigning the value to num2
-	this->num3 = num3;												// assigning the value to num3
+	this->num1 = num1;												
+	this->num2 = num2;												
+	this->num3 = num3;												
 }
 
 
 
-template <typename T>													// implementing the setter for num1
+template <typename T>													
 void TemplateClass<T>::set_num1()
 {
 	cout << "\nEnter num1> ";
@@ -65,7 +63,7 @@ void TemplateClass<T>::set_num1()
 }
 
 
-template <typename T>													// implementing the setter for num2
+template <typename T>													
 void TemplateClass<T>::set_num2()
 {
 	cout << "\nEnter num2> ";
@@ -73,7 +71,7 @@ void TemplateClass<T>::set_num2()
 }
 
 
-template <typename T>													// implementing the setter for num3
+template <typename T>													
 void TemplateClass<T>::set_num3()
 {
 	cout << "\nEnter num3> ";
@@ -83,7 +81,7 @@ void TemplateClass<T>::set_num3()
 
 
 
-template <typename T>													// implementing the getter for the smallest
+template <typename T>													
 T TemplateClass<T>::get_smallest()
 {
 	if (num1 < num2 && num1 < num3)
@@ -96,7 +94,7 @@ T TemplateClass<T>::get_smallest()
 
 
 
-template <typename T>													// implementing the getter for the largest
+template <typename T>													
 T TemplateClass<T>::get_largest()
 {
 	if (num1 > num2 && num1 > num3)
@@ -107,7 +105,7 @@ T TemplateClass<T>::get_largest()
 		return num3;
 }
 
-template <typename T>													// implementing the getter for the middle
+template <typename T>													
 T TemplateClass<T>::get_middle()
 {
 	if (num1 < num2 && num1 > num3)
