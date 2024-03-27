@@ -1,76 +1,75 @@
-#include "FreshFood.h"											// including the FreshFood header
+#include "FreshFood.h"											
 
-
-FreshFood::FreshFood() : weight(0.0), pricePerKilo(0.0)							// declaring the default constructor
+FreshFood::FreshFood() : weight(0.0), pricePerKilo(0.0)							
 {
 
 }
 
-FreshFood::FreshFood(double _weight, double _pricePerKilo,						// declaring the overloaded constructor to
-	long int _barcode, string _name) : Products(_barcode, _name)					// assigne the parameters to the member variables
+FreshFood::FreshFood(double _weight, double _pricePerKilo,						
+	long int _barcode, string _name) : Products(_barcode, _name)					
 {
 	weight = _weight;
 	pricePerKilo = _pricePerKilo;
 }
 
-void FreshFood::set_weight()										// declaring the setter for the weight
+void FreshFood::set_weight()										
 {
 	cout << "\nEnter the weight> ";
 	cin >> weight;
 
-	while (weight < 0)										// validating the input
+	while (weight < 0)										
 	{
 		cout << "\nInvalid input. Try again> ";
 		cin >> weight;
 	}
 }
 
-double FreshFood::get_weight()										// declaring the getter for the weight
+double FreshFood::get_weight()										
 {
 	return weight;
 }
 
-void FreshFood::set_pricePerKilo()									// declaring the setter for the price per kilo
+void FreshFood::set_pricePerKilo()									
 {
 	cout << "\nEnter the price per kilo> $";
 	cin >> pricePerKilo;
 
-	while (pricePerKilo < 0)									// validating the input
+	while (pricePerKilo < 0)									
 	{
 		cout << "\nInvalid input. Try again> $";
 		cin >> pricePerKilo;
 	}
 }
 
-double FreshFood::get_pricePerKilo()									// declaring the getter for the price per kilo
+double FreshFood::get_pricePerKilo()									
 {
 	return pricePerKilo;
 }
 
-double FreshFood::getTotal()										// declaring the getter for the total price
+double FreshFood::getTotal()										
 {
 	return pricePerKilo * weight;
 }
 
-void FreshFood::setCode()										// overriding the setter for the barcode
+void FreshFood::setCode()										
 {
 	cout << "\nEnter the barcode of the product> ";
 	cin >> barcode;
 }
 
-void FreshFood::setName()										// overriding the setter for the name
+void FreshFood::setName()										
 {
 	cout << "\nEnter the name of the product> ";
 	cin >> name;
 }
 
-void FreshFood::scanner()										// declaring the scanner
+void FreshFood::scanner()										
 {
 	char choice;
 	cout << "\nDo you want to change any of the details (name, code, price) - y/n> ";
 	cin >> choice;
 
-	while (choice != 'y' && choice != 'n')								// validating the input
+	while (choice != 'y' && choice != 'n')								
 	{
 		cout << "\nEnter 'y' for Yes or 'n' for No> ";
 		cin >> choice;
@@ -85,7 +84,7 @@ void FreshFood::scanner()										// declaring the scanner
 		cout << "\nWeight> ";
 		cin >> weight;
 
-		while (weight < 0)									// validating the inputted weight
+		while (weight < 0)									
 		{
 			cout << "\nInvalid input. Try again> ";
 			cin >> weight;
@@ -94,7 +93,7 @@ void FreshFood::scanner()										// declaring the scanner
 		cout << "\nPrice per kilo> $";
 		cin >> pricePerKilo;
 
-		while (pricePerKilo < 0)								// validating the inputted price
+		while (pricePerKilo < 0)								
 		{
 			cout << "\nInvalid input. Try again> ";
 			cin >> pricePerKilo;
@@ -104,7 +103,7 @@ void FreshFood::scanner()										// declaring the scanner
 		cout << "\nNo change selected\n";
 }
 
-void FreshFood::printer()										// overriding the virtual printer
+void FreshFood::printer()										
 {
 
 	cout << setprecision(2);
