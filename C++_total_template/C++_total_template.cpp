@@ -1,42 +1,21 @@
 
-
-
-		/*
-
-		This program prompts the user to enter series of
-		numbers (integers or doubles by the users choice) and 
-		calculates their total. 
-
-		With each iteration of the while loop
-		the program stores the entered value in a template function
-		called 'total' which keeps a running total and returns the total value
-		once '-1' is entered.
-
-		*/
+#include <iostream>														
+using namespace std;														
 
 
 
 
-
-#include <iostream>														// including the iostream directive
-
-using namespace std;														// using the std namespace
-
-
-
-
-template <class T>														// declaring template functiont total
+template <class T>														
 T total(T num)
 {
-	static T total = 0;													// static total to keep the running total
+	static T total = 0;													
 	
-	if (num == -1)														// validating the input
+	if (num == -1)														
 	{
 		return total;
 	}
 	else
-		total += num;													// adding the value entered to the total variable
-
+		total += num;													
 }
 
 
@@ -44,31 +23,29 @@ T total(T num)
 int main()
 {
 
-	int numI = 0;														// an int to hold the integers
-	double numD = 0;													// a double to hold the doubles
+	int numI = 0;														
+	double numD = 0;													
 	
-	int choice;														// an integer to hold the users choice
+	int choice;														
 
-	cout << "\n\tChoose between the following: \n\n" <<									// a menu for the options
+	cout << "\n\tChoose between the following: \n\n" <<									
 		"\t'1' for integer\n" <<
 		"\t'2' for double\n" <<
 		"\t'-1' to stop entering\n";
 	cout << "> ";
-	cin >> choice;														// prompting the user to enter the option selected
-
-	switch (choice)														// using switch statement for the choice
+	cin >> choice;														
+	switch (choice)														
 	{
 	case 1:
 
-		while (numI != -1)												// entering the while loop
+		while (numI != -1)												
 		{
-			cout << "\nEnter an integer> ";										// prompting the user to enter a value
+			cout << "\nEnter an integer> ";										
 			cin >> numI;
 
-			if (numI != -1)												// validating the input
-				total(numI);											// passing the value to the 'total' template
-			else
-				cout << "\n\tThe total ot the entered integers is: " <<		// printing the result
+			if (numI != -1)												
+				total(numI);														else
+				cout << "\n\tThe total ot the entered integers is: " <<		
 				total(numI) << '\n';								
 		}
 
@@ -76,21 +53,20 @@ int main()
 
 	case 2:
 
-		while (numD != -1)												// entering the while loop
+		while (numD != -1)												
 		{
-			cout << "\nEnter a double> ";										// prompting the user to enter a value
+			cout << "\nEnter a double> ";										
 			cin >> numD;
 
-			if (numD != -1)												// validating the input
-				total(numD);											// passing the value to the 'total' template
-			else
-				cout << "\n\tThe total of the entered doubles is: " <<		// printing the result
+			if (numD != -1)												
+				total(numD);														else
+				cout << "\n\tThe total of the entered doubles is: " <<		
 				total(numD) << "\n";
 		}
 
 		break;
 
-	default:														// validating the choice selected
+	default:														
 
 		cout << "\nInvalid input. Try again!\n";
 		break;
@@ -101,5 +77,5 @@ int main()
 
 
 
-	return 0;														// exiting the program
+	return 0;														
 }
