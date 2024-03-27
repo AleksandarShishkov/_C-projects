@@ -4,28 +4,27 @@
 #ifndef BASICSHAPE_H
 #define BASICSHAPE_H
 
-#include <iostream>										// including the iostream library
-#include <cmath>										// includeing the cmath library
+#include <iostream>										
+#include <cmath>										
 
-using namespace std;										// using the std namespace
+using namespace std;										
 
 
 
-class BasicShape										// defining pure virtual class BasicShape
+class BasicShape										
 {
 
 protected:
 
-	double area;										// a protected double to hold the area
+	double area;										
 
 
 public:
 
 
-	double get_area();									// getter for the area
-	virtual double calc_area() = 0;								// pure virtual function calc_area
-	
-	virtual ~BasicShape()									// virtual destructor
+	double get_area();									
+	virtual double calc_area() = 0;									
+	virtual ~BasicShape()									
 	{	}
 };
 
