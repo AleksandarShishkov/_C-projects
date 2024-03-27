@@ -5,9 +5,9 @@
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
 
-#include <iostream>												// including iostream directory
+#include <iostream>												
 
-using namespace std;												// using the std namespace
+using namespace std;												
 
 
 
@@ -16,63 +16,62 @@ class Rectangle
 
 private:
 
-	double lenght;												// a private double to hold the lenght
-	double width;												// a private double to hold the width
+	double lenght;												
+	double width;												
 
 public:
 
-	Rectangle();												// default constructor
-
+	Rectangle();												
 	
-	class Exception_lenght											// exception class for the lenght
+	class Exception_lenght											
 	{
 	private:
 
-		double l;											// a private double to hold the lenght
+		double l;											
 
 	public:
 
-		Exception_lenght(double lenght)									// constructor with one paramter for
-		{												// the lenght
+		Exception_lenght(double lenght)									
+		{												
 
-			l = lenght;										// assigning the lenght to l
+			l = lenght;										
 		}
 
-		double get_l()											// getter for l
+		double get_l()											
 		{
-			return l;										// returning l
+			return l;										
 		}	
 	};
 
-	class Exception_width											// exception class for the width
+	class Exception_width											
 	{
 	private:
 
-		double w;											// a private double to hold the width									
+		double w;																				
 
 	public:
 
-		Exception_width(double width)									// constructor with one paramter for	
-		{												// the lenght
+		Exception_width(double width)									
+		{												
 
-			w = width;										// assigning the width to w
+			w = width;										
 		}
 
-		double get_w()											// getter for w
+		double get_w()											
 		{
-			return w;										// returning w
+			return w;										
 		}
 	};
 	
-	void set_lenght();											// setter for the lenght
-	void set_width();											// setter for the width
+	void set_lenght();											
+	void set_width();											
 
 
 
-	double get_area();											// getter for the area
-	double get_perimeter();											// getter for the parameter
+	double get_area();											
+	double get_perimeter();											
 		
-	~Rectangle();												// destructor
+	~Rectangle();												
 
 };
 
