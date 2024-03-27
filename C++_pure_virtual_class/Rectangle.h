@@ -3,78 +3,76 @@
 
 #ifndef RECTANGLE_H
 #define RECTANGBLE_H
-#include "BasicShape.h"										// including the BasicShape header
+#include "BasicShape.h"										
 
 
 
-class Rectangle : public BasicShape								// derived class Rectangle
+class Rectangle : public BasicShape								
 {
 
 private:
 
-	long width;										// a long integer to hold the width
-	long lenght;										// a long integer to hold the lenght
+	long width;										
+	long lenght;										
 
 
 public:
 
 
-	Rectangle();										// default constructor
-	Rectangle(long, long);									// constructor with parameters for
-												// the width and the lenght
+	Rectangle();										
+	Rectangle(long, long);									
+												
 																				
 
-	class Exception_width									// exceotion class for the width
+	class Exception_width									
 	{
 	private:
 
-		long w;										// a long integer to hold the width
+		long w;										
 
 	public:
 
-		void set_width(Rectangle& r)							// setter with parameter for the width
+		void set_width(Rectangle& r)							
 		{
-			w = r.width;								// assigning the value to w
+			w = r.width;								
 		}
 
-		long get_width()								// getter for w
+		long get_width()								
 		{
-			return w;								// returning w
+			return w;								
 		}
 
 	};
 
-	class Exception_lenght									// exception class for the lenght
+	class Exception_lenght									
 	{
 
 	private:
 
-		long l;										// a long integer to hold the lenght
+		long l;										
 
 	public:
 
-		void set_lenght(Rectangle& r)							// setter with parameter for the lenght
+		void set_lenght(Rectangle& r)							
 		{
-			l = r.lenght;								// assigning the lenght to l
+			l = r.lenght;								
 		}
 
-		long get_lenght()								// getter for l
+		long get_lenght()								
 		{
-			return l;								// returning l
+			return l;								
 		}
 	};
 
 
-	void set_width();									// setter for the width
-	void set_lenght();									// setter for the lenght
+	void set_width();									
+	void set_lenght();									
 
-	long get_width();									// getter for the width
-	long get_lenght();									// getter for the lenght
+	long get_width();									
+	long get_lenght();									
+	double calc_area();									
 
-	double calc_area();									// overriding the pure virtual function calc_area()
-
-	~Rectangle();										// destructor
-
+	~Rectangle();										
 
 };
 
