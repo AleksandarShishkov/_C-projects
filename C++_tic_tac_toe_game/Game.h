@@ -4,7 +4,7 @@
 
 #ifndef GAME_H
 #define GAME_H
-#include "Board.h"												// including the base class`s header
+#include "Board.h"												
 
 
 class Game :public Board
@@ -12,19 +12,18 @@ class Game :public Board
 
 private:
 
-	string name_pl1;											// a string to hold the pl1`s name
-	string name_pl2;											// a string to hold the pl2`s name
+	string name_pl1;											
+	string name_pl2;											
 
-	char char_pl1;												// a char to hold pl1`s character
-	char char_pl2;												// a char to hold pl2`s character
+	char char_pl1;												
+	char char_pl2;												
 
-	int x;													// an integer to hold 'x' coordinate
-	int y;													// an integer to hold 'y' coordinate
+	int x;													
+	int y;													
 
 	
-	bool valid_move;											// a boolean for move validation
-
-	int who_first;												// an integer to hold data who begins first
+	bool valid_move;											
+	int who_first;												
 
 		
 
@@ -32,42 +31,40 @@ private:
 public:
 
 
-	Game();													// default constructor
+	Game();													
+
+	void set_name_pl1() override;										
+	void set_name_pl2() override;										
+	void set_char_pl1() override;										
+	void set_char_pl2()override;										
+
+	string get_name_pl1();											
+	string get_name_pl2();											
+
+	void set_who_first() override;										
+	int get_who_first();											
+
+	void move_pl1() override;										
+	void move_pl2() override;										
 
 
-	void set_name_pl1() override;										// overriding the setter for the pl1`s name
-	void set_name_pl2() override;										// overriding the setter for the pl2`s name
-	void set_char_pl1() override;										// overriding the setter for the pl1`s char
-	void set_char_pl2()override;										// overriding the setter for the pl2`s char
+	void validate_board() override;										
+	void validate_pl1() override;										
+	void validate_pl2() override;										
 
-	string get_name_pl1();											// getter for pl1`s name
-	string get_name_pl2();											// getter for pl2`s name
-
-	void set_who_first() override;										// overriding the setter for who_first
-	int get_who_first();											// getter for who_first
-
-	void move_pl1() override;										// overriding the setter for pl1`s move
-	void move_pl2() override;										// overriding the setter for pl2`s move
-
-
-	void validate_board() override;										// overriding the setter for board validation
-	void validate_pl1() override;										// overriding the setter for pl1`s validation
-	void validate_pl2() override;										// overriding the setter for pl2`s validation
-
-	bool get_v_board();											// getter for the board validation
-	bool get_v_pl1();											// getter for the pl1`s validation
-	bool get_v_pl2();											// getter for the pl2`s validation
+	bool get_v_board();											
+	bool get_v_pl1();											
+	bool get_v_pl2();											
 
 	
 
-	void new_game() override;										// overriding the setter for new_game
+	void new_game() override;										
 	
-	bool get_n_game();											// getter for new_game
+	bool get_n_game();											
 
 
 
-	~Game();												// destructor
-
+	~Game();												
 
 
 };
